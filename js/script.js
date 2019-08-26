@@ -43,7 +43,9 @@ $(function() {
                   if(index == data.length-1){
                     $('#next').hide();
                   }else{
-                    $('#next').fadeIn();
+                    setTimeout(function(){
+                       next();
+                    },5000)
                   }
             } else{
                 console.log("incorrect");
@@ -51,6 +53,9 @@ $(function() {
                 $('.sad').slideUp().fadeIn();
                 let audioData = new Audio(tryAgain);
                 audioData.play();
+                setTimeout(function(){
+                  location.reload();
+                },5000)
             }
         }
   }); 
@@ -74,8 +79,10 @@ $(function() {
       $('.dropSuggestions').html(questionHtml);
       
       // to play audio
-      let mainAudio = new Audio(data[index].audio);
-      mainAudio.play();
+       let mainAudio = new Audio(data[index].audio);
+       mainAudio.play(); 
+   
+      
       // to append the suggestions
       let suggHtml = `<div id="match" class="suggData dragg"><span>${data[index].corrAns}</span></div>
                      <div class="suggData suggData1 dragg"><span>${data[index].sugg1}</span></div>
@@ -102,19 +109,18 @@ $(function() {
        location.reload();
   })
 
-  $('#next').click(function(){
+ function next(){
     console.log("i am the next one...");
     let audioData = new Audio(beepSound);
     audioData.play();
     index++;
     let url2 = window.location.pathname;
     var newurl = url2 + `?data=all&qno=${index}`;
-
     setTimeout(function(){
       window.location.href = newurl;
     },500)
     
-  })
+  }
 
   $('#prev').click(function(){
     console.log("i am the next one...");
@@ -134,11 +140,11 @@ $(function() {
      $('#prev').hide();
   }
 
-  if(index > 0){
-    $('#next').fadeIn();
-  }
-  if(index == data.length-1){
-    $('#next').hide();
-  }
+  // if(index > 0){
+  //   $('#next').fadeIn();
+  // }
+  // if(index == data.length-1){
+  //   $('#next').hide();
+  // }
 
 });
