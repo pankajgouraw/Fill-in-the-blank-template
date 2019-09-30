@@ -4,6 +4,8 @@ $(function() {
 
 
   $("#activityText").text(header);
+  $("#activityText").css({'color':headerColor});
+  $("#fillTheBlank").css({'color':fillTheBlanksColor});
   $('.wrapper').css({'outline':borderColor});
   $('body').css({'background':bgColor});
   $('#LetterText').text(alphabate);
@@ -13,9 +15,9 @@ $(function() {
   if(url.indexOf('?') > 0){
     let params = new URLSearchParams(url.substring(1));
     index = parseInt(params.get('qno'));
-    console.log("available....");
+    console.log("url variable available....");
   }else{
-    console.log("not available...");
+    console.log("url variable not available...");
      let mainAudio = new Audio(data[0].audio);
      mainAudio.play();
   }
@@ -61,7 +63,6 @@ $(function() {
   }); 
 
   }  //end here drag and drop 
-
 
 
   let questionHtml = '';
@@ -123,7 +124,7 @@ $(function() {
   }
 
   $('#prev').click(function(){
-    console.log("i am the next one...");
+    console.log("i am the prev one...");
     let audioData = new Audio(beepSound);
     audioData.play();
     index--;

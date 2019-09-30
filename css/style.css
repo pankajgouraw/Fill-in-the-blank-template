@@ -25,14 +25,16 @@ body {
 }
 
 .innerWrapper h2{
-    font-family: cursive;
+    font-family: sans-serif;
     font-weight: bold;
+    position: relative;
+	left: -70px;
 }
 
 #fillTheBlank{
     text-align: center;
 	font-weight: bold;
-	font-family: cursive;
+	font-family: sans-serif;
 	font-size: 30px;
 	margin-bottom: 20px;
 }
@@ -61,12 +63,20 @@ body {
 	font-size: 30px;
 	font-weight: bold;
 	text-transform: uppercase;
-	font-family: cursive;
+	font-family: sans-serif;
     cursor:pointer;
 }
 .suggestionContainer{
-	display: flex;
-	justify-content: center;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    flex-direction: column;
+    right: 50px;
+    border-radius: 5px;
+    border: 2px solid #000;
+    box-shadow: 0px 3px 7px #000;
+    background:#ffffff54;
+    margin-top:30px;
 }
 .suggestionContainer .suggData{
     border:none;
@@ -82,12 +92,13 @@ transition: 0.5s all;}
     justify-content: center;
     height: 100px;
     overflow: hidden;
+    margin-top:30px;
 }
 .resultContainer img{    width: 80px; margin-right:15px;}
 .resultContainer button{
     padding: 7px 10px;
     font-size: 16px;
-    font-family: cursive;
+    font-family: sans-serif;
     font-weight: 500;
     background: #e0155a;
     color: #fff;
@@ -96,7 +107,7 @@ transition: 0.5s all;}
     cursor:pointer;
 }
 
-.resultContainer h3{font-family: cursive; }
+.resultContainer h3{font-family: sans-serif; }
 .sad{display: none;}
 .happy{display: none;}
 
@@ -113,7 +124,7 @@ transition: 0.5s all;}
     border: none;
     background: #E91E63;
     font-size: 20px;
-    font-family: cursive;
+    font-family: sans-serif;
     font-weight:500;
     padding: 10px 20px;
     color: #fff;
@@ -143,12 +154,18 @@ transition: 0.5s all;}
 .imgContainer img{
 	    width: 230px;
 }
+@media screen and (max-width: 768px) {
+#fillTheBlank, .logoWrapper h2, .suggData, .navContainer button{font-family: sans-serif;}
+}
 @media screen and (max-width: 500px) {
 .dropSuggestions{flex-wrap:wrap;}
 .logoWrapper img{width:100px;}
-.logoWrapper h2{font-size:20px;}
+.logoWrapper h2{font-size:20px; left: -10px;}
 #fillTheBlank{font-size: 20px;}
 .suggData{margin:3px; width:40px; height:40px;}
-.imgContainer img {width: 150px;}
+.imgContainer img {width: 200px;}
+.suggestionContainer{right:20px;}
+.resultContainer{margin-top:15px;}
+
 } 
 /*  // media quesry end here...*/

@@ -2,7 +2,9 @@
 const bgColor = '#000';
 const borderColor = '10px solid #07887c';
 const header = 'Activity';
+const headerColor = '#000';
 const alphabate = 'B';
+const fillTheBlanksColor = "#000";
 
 const beepSound = 'audio/beep.mp3';
 const wellDone = 'audio/wellDone.mp3';
@@ -32,6 +34,7 @@ const data = [
 		'sugg2'    : 'y',
 		'audio'    : 'audio/aclip.mp3',
 		'img'      : 'img/ball.png'
-	},
+	}
+
 
 ];
